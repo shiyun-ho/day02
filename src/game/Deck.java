@@ -1,5 +1,6 @@
 package game;
 
+import java.security.SecureRandom;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,9 +23,35 @@ public class Deck {
         }
         System.out.println("The new deck");
         System.out.println(deck);
+    }
+
+    public void shuffle(){
+        //logic: Systematic way of shuffling
+        //algorithm: Way to shuffle randomly
+        //generate random number
+        Random rand = new SecureRandom();
+
+        for (int curr =0; curr < deck.size(); i++){
+            int toSwap = rand.nextInt(deck.size());
+            //gets current card- note that in list there are two types of add(int, element) [NA cos append] OR set)
+            Card c = deck.get(curr);
+            //to swap
+            Card d = deck.get(toSwap);
+            deck.set(curr, d);
+            deck.set(toSwap, c);
+
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Deck [deck=" + deck + "]";
+    }
+
+    
 
     }
     
     //create deck
 
-}
+

@@ -5,6 +5,11 @@ public class Main{
     public static void main(String[] args){
 
         Deck deck = new Deck();
+        System.out.println(">> before: %$\n", deck);
+
+        deck.shuffle();
+
+        System.out.printf(">> after: %s\n", deck);
     }
 }
 
